@@ -5,30 +5,31 @@ import HeaderUI from './components/HeaderUI';
 import AlertUI from './components/AlertUI';
 import SelectorUI from './components/SelectorUI';
 
-function App() {
-  const [selectedCity, setSelectedCity] = useState('');
 
+function App() {
   return (
     <Grid container spacing={5} sx={{ justifyContent: 'center', alignItems: 'center' }}>
       <Grid size={{ xs: 12, md: 12 }}>
         <HeaderUI />
       </Grid>
 
-      <Grid size={{ xs: 12, md: 12 }} container sx={{ justifyContent: 'flex-end', alignItems: 'center' }}>
-        <AlertUI description={selectedCity ? `Clima en ${selectedCity}` : 'No se prevén lluvias'} />
-      </Grid>
+            {/* Alertas */}
+            <Grid size={{ xs: 12, md: 12 }}                container sx={{ justifyContent: 'flex-end', alignItems: 'center' }}>
 
-      <Grid size={{ xs: 12, md: 3 }}>
-        <SelectorUI value={selectedCity} onCityChange={setSelectedCity} />
-      </Grid>
+                <AlertUI description="No se prevén lluvias" /></Grid>
 
-      <Grid size={{ xs: 12, md: 9 }}>
-        Ciudad seleccionada: {selectedCity || 'Ninguna'}
-      </Grid>
+            {/* Selector */}
+           
+ <Grid size={{ xs: 12, md: 3 }}>
+                <SelectorUI />
+            </Grid>
+            {/* Indicadores */}
+            <Grid size={{ xs: 12, md: 9 }}>Elemento: Indicadores</Grid>
 
-      <Grid size={{ xs: 12, md: 6 }} sx={{ display: { xs: 'none', md: 'block' } }}>
-        Elemento: Gráfico
-      </Grid>
+            {/* Gráfico */}
+            <Grid size={{ xs: 12, md: 6 }} sx={{ display: { xs: 'none', md: 'block' } }}>
+                Elemento: Gráfico
+            </Grid>
 
       <Grid size={{ xs: 12, md: 6 }} sx={{ display: { xs: 'none', md: 'block' } }}>
         Elemento: Tabla
@@ -36,6 +37,7 @@ function App() {
 
       <Grid size={{ xs: 12, md: 12 }}>Elemento: Información adicional</Grid>
     </Grid>
+    
   );
 }
 
