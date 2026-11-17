@@ -1,0 +1,9 @@
+mapa de estados:
+
+inicio -> data null   error null  loading true
+    exito
+        respuesta -> data openmeteoresponse error null loading false
+    error
+        error -> data null  error string    loading false
+
+exito/error -> final
